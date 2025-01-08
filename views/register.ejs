@@ -1,0 +1,70 @@
+<%- include("partials/header.ejs") %>
+
+  <div class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-light ">
+    <div class="col-12 col-md-5 col-lg-4 d-flex flex-column align-items-center justify-content-center bg-white p-2  rounded">
+      <p class="w-100 text-dark text-center pb-1 fw-bold fs-3">Register</p>
+      <form id="registerForm" action="/register" method="post" >
+        <div class="w-100">
+          <div class="mb-3 w-100">
+            <label for="firstname" class="form-label text-dark small">First Name</label>
+            <input type="text" 
+              name="firstname"
+              class="form-control form-control-sm w-100"
+              placeholder="Enter First Name..."
+            />
+          </div>
+          <div class="mb-3">
+            <label for="lastname" class="form-label text-muted small">Last Name</label>
+            <input type="text" 
+              name="lastname"
+              class="form-control form-control-sm"
+              placeholder="Enter Last Name..."
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label text-muted small">Email Address</label>
+            <input type="email" 
+              name="email"
+             class="form-control form-control-sm"
+             placeholder="Enter Email Address..."
+            />  
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label text-muted small">Password</label>
+            <input 
+              type="password" 
+              name="password"
+              class="form-control form-control-sm"
+             placeholder="Enter Password..."
+            />
+          </div>
+        </div>
+        <div class="mb-3">
+          <button class="btn btn-dark w-100 text-white fw-bold" 
+            type="submit" 
+            value="submit"
+          > 
+            Submit
+          </button>
+        </div>
+      </form>
+      <div>
+        <p class="text-muted small">Already have an Account? 
+          <a href="/loginacc" class="text-danger">Login Here</a>
+        </p>
+      </div>
+      <div>
+        <p class="text-muted small">
+          <input id="checksignup" type="checkbox" name="checkboxup"  />
+          By continuing, I agree to the terms of use and privacy policy.
+        </p>
+        <p class="text-danger small">
+          <%= typeof message !== 'undefined' ? message : '' %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+
+<%- include("partials/footer.ejs") %>
